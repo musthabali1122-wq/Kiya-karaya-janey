@@ -29,3 +29,36 @@ if st.button("प्रोसेस करें"):
         # यहाँ भविष्य में AI का जवाब आएगा
     else:
         st.error("कृपया कुछ लिखें!")
+# Project: Negative Energy vs Logic Checker
+# Iska maksad yeh samajhna hai ki pareshani "totke" se hai ya "lifestyle" se.
+
+def check_person_status(person_type, symptoms):
+    status_report = []
+    
+    # 1. Mahilaon ke liye special checks
+    if person_type == "female":
+        if "constant_tiredness" in symptoms:
+            status_report.append("Check: Vitamin D/B12 or Hemoglobin levels (Medical)")
+        if "sudden_anger" in symptoms:
+            status_report.append("Check: Hormonal balance or Mental stress (Health)")
+        if "feeling_stuck" in symptoms:
+            status_report.append("Check: Lack of personal time or social support (Support)")
+
+    # 2. Kaam rukne ka logic (Work blockage)
+    if "work_stopping" in symptoms:
+        status_report.append("Check: Market analysis, Planning, and Time management (Action)")
+
+    return status_report
+
+# Input Data: Maan lijiye kisi mahila ke saath yeh ho raha hai
+symptoms_list = ["constant_tiredness", "sudden_anger", "work_stopping"]
+findings = check_person_status("female", symptoms_list)
+
+# Result Output
+print("--- Analysis Report ---")
+for issue in findings:
+    print(f"[!] Analysis: {issue}")
+
+print("\n--- Final Advice ---")
+print("Vashikaran ya Totka aksar 'Darr' (Fear) hota hai.")
+print("Asal ilaaj 'Data' aur 'Dhyan' (Medical & Mental Health) hai.")
