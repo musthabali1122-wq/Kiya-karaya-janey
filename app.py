@@ -67,3 +67,54 @@ if st.button("गहराई से विश्लेषण करें"):
 
 st.markdown("---")
 st.warning("⚠️ अस्वीकरण: यह ऐप केवल सामान्य जानकारी के लिए है।")
+def check_bp(systolic, diastolic):
+    print(f"\n--- रिपोर्ट: {systolic}/{diastolic} mmHg ---")
+    
+    if systolic < 120 and diastolic < 80:
+        return "आपका बीपी सामान्य (Normal) है। स्वस्थ रहें!"
+    elif 120 <= systolic <= 139 or 80 <= diastolic <= 89:
+        return "सावधान! यह 'Pre-hypertension' है। नमक कम करें और सैर करें।"
+    else:
+        return "अलर्ट! बीपी हाई है। कृपया आराम करें और डॉक्टर से सलाह लें।"
+
+# यूजर से इनपुट लेना
+try:
+    s = int(input("ऊपर वाला बीपी (Systolic) डालें: "))
+    d = int(input("नीचे वाला बीपी (Diastolic) डालें: "))
+    
+    result = check_bp(s, d)
+    print(result)
+except ValueError:
+    print("कृपया सही नंबर डालें।")
+def gold_purity_and_health_check(karat):
+    # सोने की शुद्धता का प्रतिशत निकालना
+    purity_percentage = (karat / 24) * 100
+    
+    print(f"\n--- गोल्ड शुद्धता रिपोर्ट ({karat}K) ---")
+    print(f"शुद्ध सोना: {purity_percentage:.2f}%")
+    print(f"मिलावटी धातुएं: {100 - purity_percentage:.2f}%")
+    
+    # स्वास्थ्य जोखिम का विश्लेषण
+    if karat < 18:
+        status = "हाई रिस्क: इसमें भारी मात्रा में निकल या अन्य धातुएं हो सकती हैं।"
+        advice = "सावधान! इससे त्वचा में जलन और बेचैनी हो सकती है जो बीपी बढ़ा सकती है।"
+    elif 18 <= karat < 22:
+        status = "मीडियम रिस्क: संवेदनशील त्वचा के लिए परेशानी हो सकती है।"
+        advice = "अगर गहने पहनने वाली जगह पर लाली या खुजली है, तो इसे उतार दें।"
+    else:
+        status = "लो रिस्क: यह शुद्धता के करीब है।"
+        advice = "यह आमतौर पर सुरक्षित है। अगर फिर भी बीपी हाई है, तो कारण कुछ और हो सकता है।"
+        
+    return status, advice
+
+# यूजर से इनपुट लेना
+try:
+    k = int(input("अपने गहने का कैरेट (Karat) डालें (जैसे 22, 18, 14): "))
+    if 0 < k <= 24:
+        risk, tips = gold_purity_and_health_check(k)
+        print(f"स्थिति: {risk}")
+        print(f"सुझाव: {tips}")
+    else:
+        print("कृपया 1 से 24 के बीच सही कैरेट डालें।")
+except ValueError:
+    print("कृपया सिर्फ नंबर डालें।")
