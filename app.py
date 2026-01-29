@@ -118,11 +118,10 @@ try:
         print("कृपया 1 से 24 के बीच सही कैरेट डालें।")
 except ValueError:
     print("कृपया सिर्फ नंबर डालें।")
-    
     class WomensRightsAndHealth:
     def __init__(self):
         self.context = "भारतीय समाज में संपत्ति और मानसिक स्वास्थ्य का अंतर्संबंध"
-        
+
     def get_social_challenges(self):
         return {
             "हक छीनने का डर": "रिश्ता टूटने के डर से संपत्ति में हिस्सा न मांगना।",
@@ -139,21 +138,23 @@ except ValueError:
     def solutions(self):
         return [
             "संवाद (Communication): परिवार से स्पष्ट बात करें।",
-            "काउंसलिंग: मनोचिकित्सक से सलाह लें।",
+            "काउंसलिंग: मनोवैज्ञानिक से सलाह लें।",
             "कानूनी जागरूकता: अपने अधिकारों को पहचानें।"
         ]
 
     def display_report(self):
         print(f"--- {self.context} --- \n")
-        
         print("### सामाजिक और मनोवैज्ञानिक चुनौतियाँ:")
         for key, value in self.get_social_challenges().items():
             print(f"- {key}: {value}")
         
         print("\n### कानूनी हकीकत:")
         print(self.legal_reality())
-        
+
         print("\n### स्वास्थ्य हकीकत:")
+        print(self.health_fact())
+
+   
         print(self.health_fact())
         
         print("\n### समाधान की दिशा:")
