@@ -118,3 +118,51 @@ try:
         print("कृपया 1 से 24 के बीच सही कैरेट डालें।")
 except ValueError:
     print("कृपया सिर्फ नंबर डालें।")
+    class WomensRightsAndHealth:
+    def __init__(self):
+        self.context = "भारतीय समाज में संपत्ति और मानसिक स्वास्थ्य का अंतर्संबंध"
+        
+    def get_social_challenges(self):
+        return {
+            "हक छीनने का डर": "रिश्ता टूटने के डर से संपत्ति में हिस्सा न मांगना।",
+            "अंधविश्वास": "डिप्रेशन को 'किया-कराया' या 'ऊपरी हवा' समझना।",
+            "आर्थिक असुरक्षा": "स्वयं की संपत्ति न होने से भविष्य की चिंता।"
+        }
+
+    def legal_reality(self):
+        return "Hindu Succession Act: बेटियों का पिता की संपत्ति पर बेटों के बराबर कानूनी अधिकार है।"
+
+    def health_fact(self):
+        return "डिप्रेशन एक मेडिकल स्थिति (Chemical Imbalance) है, जादू-टोना नहीं।"
+
+    def solutions(self):
+        return [
+            "संवाद (Communication): परिवार से स्पष्ट बात करें।",
+            "काउंसलिंग: मनोचिकित्सक से सलाह लें।",
+            "कानूनी जागरूकता: अपने अधिकारों को पहचानें।"
+        ]
+
+    def display_report(self):
+        print(f"--- {self.context} --- \n")
+        
+        print("### सामाजिक और मनोवैज्ञानिक चुनौतियाँ:")
+        for key, value in self.get_social_challenges().items():
+            print(f"- {key}: {value}")
+        
+        print("\n### कानूनी हकीकत:")
+        print(self.legal_reality())
+        
+        print("\n### स्वास्थ्य हकीकत:")
+        print(self.health_fact())
+        
+        print("\n### समाधान की दिशा:")
+        for step in self.solutions():
+            print(f"-> {step}")
+        
+        print("\n" + "="*50)
+        print("नोट: संपत्ति से ज्यादा कीमती आपकी मानसिक शांति है।")
+
+# प्रोग्राम को चलाना
+report = WomensRightsAndHealth()
+report.display_report()
+
