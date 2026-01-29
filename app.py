@@ -118,6 +118,7 @@ try:
         print("कृपया 1 से 24 के बीच सही कैरेट डालें।")
 except ValueError:
     print("कृपया सिर्फ नंबर डालें।")
+    
     class WomensRightsAndHealth:
     def __init__(self):
         self.context = "भारतीय समाज में संपत्ति और मानसिक स्वास्थ्य का अंतर्संबंध"
