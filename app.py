@@ -51,7 +51,7 @@ col1, col2 = st.columns(2)
 with col1:
     gender = st.radio("लिंग चुनें:", ["महिला (Female)", "पुरुष (Male)"], horizontal=True)
 with col2:
-    age = st.selectbox("आयु वर्ग:", ["00-25", "26-40", "41-60", "60+"])
+    age = st.selectbox("आयु वर्ग:", ["00-60, "26-40", "41-60", "60+"])
 
 symptoms = st.multiselect(
     "लक्षण चुनें:",
